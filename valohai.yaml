@@ -3,4 +3,4 @@
 - step:
     name: run training
     image: 905675611115.dkr.ecr.eu-west-1.amazonaws.com/valohai/cuda-anaconda:cuda8.0-cudnn5-devel-conda4.2.0
-    command: conda env create -q; source activate ladder; conda install -y -q libgfortran==1; echo "data_path: /root/ladder" > /root/.fuelrc; fuel-download mnist; fuel-convert mnist --dtype float32; mv mnist_float32.hdf5 mnist.hdf5; python run.py train --encoder-layers 1000-500-250-250-250-10 --decoder-spec gauss --denoising-cost-x 1000,1,0.01,0.01,0.01,0.01,0.01 --labeled-samples 60000 --unlabeled-samples 60000 --seed 1 -- mnist_all_full
+    command: 'conda env create -q; source activate ladder; conda install -y -q libgfortran==1; echo "data_path: /root/ladder" > /root/.fuelrc; fuel-download mnist; fuel-convert mnist --dtype float32; mv mnist_float32.hdf5 mnist.hdf5; python run.py train --encoder-layers 1000-500-250-250-250-10 --decoder-spec gauss --denoising-cost-x 1000,1,0.01,0.01,0.01,0.01,0.01 --labeled-samples 60000 --unlabeled-samples 60000 --seed 1 -- mnist_all_full'
