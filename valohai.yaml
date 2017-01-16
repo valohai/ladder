@@ -3,7 +3,7 @@
 - step:
     name: run training
     image: 905675611115.dkr.ecr.eu-west-1.amazonaws.com/valohai/cuda-anaconda:cuda8.0-cudnn5-devel-conda4.2.0
-    command: 'cd /tmp/code; conda env create -q; source activate ladder; conda install -y -q libgfortran==1; echo "data_path: /tmp/code" > /root/.fuelrc; fuel-download mnist; fuel-convert mnist --dtype float32; mv mnist_float32.hdf5 mnist.hdf5; python run.py train {parameters} -- mnist_all_full'
+    command: 'cd /tmp/code; conda env create -q; source activate ladder; conda install -y -q libgfortran==1; echo "data_path: /tmp/code" > /root/.fuelrc; fuel-download mnist; fuel-convert mnist --dtype float32; mv mnist_float32.hdf5 mnist.hdf5; python run.py train {parameters} -- mnist_all_full; mv results/mnist_all_full0/* /tmp/out'
     parameters:
 
       - name: num-epochs
