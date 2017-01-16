@@ -8,7 +8,7 @@
 
       - name: num-epochs
         pass-as: --num-epochs {v}
-        description: Number of training epochs, 150 if not specified
+        description: Number of training epochs
 
       - name: seed
         pass-as: --seed {v}
@@ -21,7 +21,7 @@
 
       - name: unlabeled-samples
         pass-as: --unlabeled-samples {v}
-        description: How many supervised samples are used
+        description: How many unsupervised samples are used
         default: 60000
 
       - name: encoder-layers
@@ -36,5 +36,5 @@
 
       - name: decoder-spec
         pass-as: --decoder-spec {v}
-        description: List of decoding function types
+        description: Decoding function type
         default: gauss
