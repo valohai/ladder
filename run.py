@@ -510,7 +510,7 @@ def train(cli_params):
     return df
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
     rep = lambda s: s.replace('-', ',')
     chop = lambda s: s.split(',')

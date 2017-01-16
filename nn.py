@@ -269,7 +269,7 @@ class LRDecay(SimpleExtension):
             ratio = 1.0 * (self.decay_last - self.iter)
             ratio = np.maximum(0, ratio / (self.decay_last - self.decay_first))
             self.lr = np.float32(ratio * self.lr_init)
-        logger.info("Iter %d, lr %f" % (self.iter, self.lr))
+        print('{"Iter": %d, "lr": %f}' % (self.iter, self.lr))
 
 
 def global_meanpool_2d(x, num_filters):
